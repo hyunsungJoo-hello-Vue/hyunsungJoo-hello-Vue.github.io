@@ -1,0 +1,11 @@
+{
+  "hosting": {
+	  "site": "hyunsungJpp-vue",
+    "public": "docs",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
