@@ -12,5 +12,23 @@
 |PRD|main|Auto Github Action|[hyunsungJoo-hello-Vue.github.io](https://hyunsungjoo-hello-vue.github.io/)|
 ```bash
 
+# manual firebase cmd*
+$ firebase deploy
+
+=== Deploying to 'hyunsungjoo-vue'...
+
+i  deploying hosting
+i  hosting[hyunsungjoo-vue]: beginning deploy...
+i  hosting[hyunsungjoo-vue]: found 3 files in public
+✔  hosting[hyunsungjoo-vue]: file upload complete
+i  hosting[hyunsungjoo-vue]: finalizing version...
+✔  hosting[hyunsungjoo-vue]: version finalized
+i  hosting[hyunsungjoo-vue]: releasing new version...
+✔  hosting[hyunsungjoo-vue]: release complete
+
+✔  Deploy complete!
+
+Hosting URL: https://hyunsungjoo-vue.web.app
+
 
 ```
