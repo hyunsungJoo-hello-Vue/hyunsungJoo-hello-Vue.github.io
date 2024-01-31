@@ -1,11 +1,12 @@
 <script setup>
-import category from '@/assets/category.json'
+import category from '@/assets/sports.json'
 
-const categories = category
+const categories = sports
 </script>
 
 <template>
-	<li v-for="obj in categories">
-		{{obj.name}} - {{obj.code}}
-	</li>
+        <button @click="awesome = !awesome">toggle</button>
+
+        <h1 v-if="awesome">Vue is awesome!</h1>
+        <h1 v-else>Oh no 😊</h1>
 </template>
