@@ -16,7 +16,7 @@ const chosunArticles = filterChosunData()
   <div>
     <button @click="showChosunData = !showChosunData">조선일보 기사만 보기</button>
     <ul v-if="showChosunData">
-        <li v-for="article in all.articles"> <!-- 수정된 부분 -->
+        <li v-for="article in all.articles">>
         {{ article.author }} - {{ article.title }} - {{ article.url }}
         </li>
     </ul>
