@@ -1,47 +1,30 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+import sportsData from '@/assets/sports.json'
+
+const showChosunData = ref(true)
+const all = sportsData
+
+const filterChosunData = () => {
+  return sportsData.articles.filter(article => article.source?.name === 'Chosun.com')
+}
+
+const chosunArticles = filterChosunData()
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+    <button @click="showChosunData = !showChosunData">조선일보 기사만 보기</button>
+    <ul v-if="showChosunData">
+        <li v-for="article in all.articles">>
+        {{ article.author }} - {{ article.title }} - {{ article.url }}
+        </li>
+    </ul>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <ul v-else>
+      <li v-for="article in chosunArticles">
+        {{ article.author }} - {{ article.title }} - {{ article.url }}
+      </li>
+    </ul>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
