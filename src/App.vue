@@ -1,30 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import sportsData from '@/assets/sports.json'
 
-const showChosunData = ref(true)
-const all = sportsData
-
-const filterChosunData = () => {
-  return sportsData.articles.filter(article => article.source?.name === 'Chosun.com')
-}
-
-const chosunArticles = filterChosunData()
+const message = ref('')
 </script>
 
 <template>
-  <div>
-    <button @click="showChosunData = !showChosunData">조선일보 기사만 보기</button>
-    <ul v-if="showChosunData">
-        <li v-for="article in all.articles">>
-        {{ article.author }} - {{ article.title }} - {{ article.url }}
-        </li>
-    </ul>
-
-    <ul v-else>
-      <li v-for="article in chosunArticles">
-        {{ article.author }} - {{ article.title }} - {{ article.url }}
-      </li>
-    </ul>
-  </div>
+	<span>Multiline message is:</span>
+	<p style="white-space: pre-line;">{{ message }}</p>
+	<textarea v-model="message" placeholder="add multiple lines"></textarea>
 </template>
