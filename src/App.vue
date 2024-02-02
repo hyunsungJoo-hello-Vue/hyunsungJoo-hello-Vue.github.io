@@ -15,8 +15,9 @@ fetchData()
 
 function get() {
 	todoId.value++
-	fetchData()
 }
+
+watch(todoId, fetchData)
 
 </script>
 
